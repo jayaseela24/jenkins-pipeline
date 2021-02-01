@@ -1,0 +1,21 @@
+pipeline {
+    agent { label 'demo' }
+    environment {
+        VARVAL = 'KIWI-GLOBAL'
+    }
+     stages {
+         stage( 'Stage1') {
+             environment {
+                 VARVAL = 'Cherry-Local'
+    }
+            steps {
+                sh "echo 'your name: $VARVAL'"
+                } 
+           }
+          stage( 'Stage2' ) {
+          steps {
+              echo env.VARVAL
+            }
+        }
+    }
+}
