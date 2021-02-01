@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+    parameters {
+        string(name: 'PERSON', defaultValue: 'KIWI', description: 'who are you?')
+        text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some inf about the person')
+        booleanParam(name: 'TOGGLE', defaultValue:  true, description: 'Toggle this value ')
+        choice(name: 'CHOICE',choices: ['One', 'Two', 'Three'], description: 'Pick Something')
+        password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
+        file(name: 'FILE', description: 'Choose a file to upload' ) 
+       }
+       
+     stages {
+         stage ('Example'){
+             steps {
+                echo "Hello ${params.PERSON}"
+                echo "BIOGRAPHY: ${params.BIOGRAPHY}"
+               echo "Toggle: ${params.TOGGLE}"
+               echo "Choice: ${params.CHOICE}"
+               echo "Password: ${params.PASSWORD}"
+             }
+             }
+     }
+       
+}
