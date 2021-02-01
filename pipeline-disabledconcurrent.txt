@@ -1,0 +1,15 @@
+pipeline {
+    agent { label 'demo' }
+    options {
+                timestamps ()
+        disableConcurrentBuilds()
+        
+    }
+    stages {
+        stage('Stage1') {
+            steps {
+                sh 'sleep 20'
+            }
+        }
+    }    
+}
