@@ -1,0 +1,12 @@
+pipeline {
+    agent { label 'demo' }
+    stages {
+        stage('Clone Repo') {
+            steps {
+                echo 'Going  to checkout from Git'
+                git branch:'master', url: 'https://github.com/jayaseela24/testhello.git'
+                echo 'completed Checkout from Git'
+            }
+        }
+    }
+}
