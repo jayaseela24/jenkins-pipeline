@@ -1,0 +1,12 @@
+pipeline{
+    agent { label 'demo' } 
+     stages{
+         stage(stage1){
+             steps{
+                 echo " First Step " 
+             }
+         
+        }    
+    }
+    
+}
