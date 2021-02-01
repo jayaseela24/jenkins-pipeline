@@ -1,0 +1,18 @@
+pipeline {
+    agent { label 'demo' }
+    environment {
+        MYNAME = 'KIWI'
+    }
+     stages {
+         stage( 'Stage1') {
+            steps {
+                sh "echo 'your name: $MYNAME'"
+                } 
+           }
+          stage( 'Stage2' ) {
+          steps {
+              echo env.MYNAME
+            }
+        }
+    }
+}
